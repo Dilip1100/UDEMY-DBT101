@@ -1,0 +1,32 @@
+# Host Table Creation 
+
+CREATE TABLE SRC_HOSTS AS
+SELECT
+    ID AS HOST_ID,
+NVL(
+name,
+'Anonymous'
+) AS HOST_NAME,
+is_superhost AS IS_SUPERHOST,
+    CREATED_AT,
+    UPDATED_AT
+FROM
+    AIRBNB.RAW.RAW_HOSTS;
+
+# Listing Table Creation  
+
+CREATE TABLE SRC_LISTINGS AS
+SELECT
+    id AS listing_id,
+    name AS listing_name,
+    room_type,
+    CASE
+        WHEN minimum_nights = 0 THEN 1
+        ELSE minimum_nights
+    END AS minimum_nights,
+    host_id,
+    REPLACE(price_str, '$', '')::NUMBER(10, 2) AS price,
+    created_at,
+    updated_at
+FROM
+    AIRBNB.RAW.RAW_LISTINGS;
