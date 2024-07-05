@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: RAW
+    tables:
+      - name: RAW_LST
+      - name: RAW_REV
+      - name: RAW_HST
