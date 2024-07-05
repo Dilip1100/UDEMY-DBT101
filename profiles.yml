@@ -1,0 +1,24 @@
+SNWFLKABNB:
+  outputs:
+    dev:
+      account: gbdcspe-cr86200
+      database: AIRBNB
+      password: Rider@1100
+      role: ACCOUNTADMIN
+      schema: AIRBNB.RAW
+      threads: 4
+      type: snowflake
+      user: Dilip1100
+      warehouse: COMPUTE_WH
+  target: dev
+snowflake:
+  outputs:
+    dev:
+      account: https://app.snowflake.com/gbdcspe/cr86200
+      client_session_keep_alive: true
+      database: AIRBNB
+      password: Rider@1100
+      role: ACCOUNTADMIN
+      type: snowflake
+      user: Dilip1100
+      warehouse: COMPUTE_WH
